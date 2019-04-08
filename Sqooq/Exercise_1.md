@@ -174,4 +174,4 @@ lsh
 32439	Eunice	Myers
 32440	Robert	Huskey</pre></code>
 
-![screenshot_20171221-151714](https://github.com/ssu993/data_ingest_sue/blob/master/Sqooq/Exercise1PNG?raw=true)
+![screenshot_20171221-151714](https://github.com/ssu993/data_ingest_sue/blob/master/Sqooq/Exercise1.PNG?raw=true)
