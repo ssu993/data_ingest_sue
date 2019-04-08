@@ -136,4 +136,4 @@ log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more in
 {"acct_num":{"int":32436},"first_name":{"string":"Helen"},"last_name":{"string":"Perez"}}
 {"acct_num":{"int":32438},"first_name":{"string":"Violet"},"last_name":{"string":"Searcy"}}</pre></code>
 
-## 
+![screenshot_20171221-151714](https://github.com/ssu993/data_ingest_sue/blob/master/Sqooq/Exercise3.PNG?raw=true)
