@@ -1,19 +1,16 @@
 # Exercise 1
-1. From the accounts table, import only the primary key, along with the first name, last name to HDFS directory /loudacre/accounts/user_info. Please save the file in text format with tab delimiters.
+From the accounts table, import only the primary key, along with the first name, last name to HDFS directory /loudacre/accounts/user_info. Please save the file in text format with tab delimiters.
 Hint: You will have to figure out what the name of the table columns are in order to complete this exercise.
 
-## Figure out the columns of table.
+## 1. Figure out the columns of table
 - Command
-<pre><code>
-sqoop eval \
+<pre><code>sqoop eval \
 --connect jdbc:mysql://localhost/loudacre \
 --username training --password training \
---query "desc accounts"
-</code></pre>
+--query "desc accounts"</code></pre>
 
 - Result
-<pre><code>
----------------------------------------------------------------------------------------------------------
+<pre><code>---------------------------------------------------------------------------------------------------------
 | Field                | Type                 | Null | Key | Default              | Extra                |
 ---------------------------------------------------------------------------------------------------------
 | acct_num             | int(11)              | NO  | PRI | (null)               |                      |
@@ -28,23 +25,18 @@ sqoop eval \
 | phone_number         | varchar(255)         | NO  |     | (null)               |                      |
 | created              | datetime             | NO  |     | (null)               |                      |
 | modified             | datetime             | NO  |     | (null)               |                      |
----------------------------------------------------------------------------------------------------------
-</code></pre>
+---------------------------------------------------------------------------------------------------------</code></pre>
 
-## Import Data to HDFS
-- Command
-<pre><code>
-sqoop import \
+## 2. Import Data to HDFS
+<pre><code>sqoop import \
 --connect jdbc:mysql://localhost/loudacre \
 --username training --password training \
 --table accounts \
 --target-dir /loudacre/accounts/user_info \
 --columns "acct_num,first_name,last_name" \
---fields-terminated-by "\t"
-</pre></code>
+--fields-terminated-by "\t"</pre></code>
 
-<pre><code>
-19/04/07 22:12:59 INFO sqoop.Sqoop: Running Sqoop version: 1.4.6-cdh5.7.0
+<pre><code>19/04/07 22:12:59 INFO sqoop.Sqoop: Running Sqoop version: 1.4.6-cdh5.7.0
 19/04/07 22:12:59 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
 19/04/07 22:12:59 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.
 19/04/07 22:12:59 INFO tool.CodeGenTool: Beginning code generation
@@ -115,24 +107,20 @@ Note: Recompile with -Xlint:deprecation for details.
 	File Output Format Counters
 		Bytes Written=2615920
 19/04/07 22:13:40 INFO mapreduce.ImportJobBase: Transferred 2.4947 MB in 36.8321 seconds (69.3583 KB/sec)
-19/04/07 22:13:40 INFO mapreduce.ImportJobBase: Retrieved 129761 records.
-</pre></code>
+19/04/07 22:13:40 INFO mapreduce.ImportJobBase: Retrieved 129761 records.</pre></code>
 
-## Check user_info Data.
+## 3. Check Data in HDFS
 - HDFS에 생성된 user_info 폴더 리스트 확인 
-<pre><code>
-[training@localhost ~]$ hdfs dfs -ls /loudacre/accounts/user_info
+<pre><code>[training@localhost ~]$ hdfs dfs -ls /loudacre/accounts/user_info
 Found 5 items
 -rw-rw-rw-   1 training supergroup          0 2019-04-07 22:13 /loudacre/accounts/user_info/_SUCCESS
 -rw-rw-rw-   1 training supergroup     638090 2019-04-07 22:13 /loudacre/accounts/user_info/part-m-00000
 -rw-rw-rw-   1 training supergroup     649567 2019-04-07 22:13 /loudacre/accounts/user_info/part-m-00001
 -rw-rw-rw-   1 training supergroup     649000 2019-04-07 22:13 /loudacre/accounts/user_info/part-m-00002
--rw-rw-rw-   1 training supergroup     679263 2019-04-07 22:13 /loudacre/accounts/user_info/part-m-00003
-</pre></code>
+-rw-rw-rw-   1 training supergroup     679263 2019-04-07 22:13 /loudacre/accounts/user_info/part-m-00003</pre></code>
 
 - 데이터 확인
-<pre><code>
-[training@localhost ~]$ hdfs dfs -tail /loudacre/accounts/user_info/part-m-00000
+<pre><code>[training@localhost ~]$ hdfs dfs -tail /loudacre/accounts/user_info/part-m-00000
 lsh
 32390	Olga	Lipson
 32391	Eddie	Hedrick
@@ -184,5 +172,4 @@ lsh
 32437	Melissa	Hayes
 32438	Violet	Searcy
 32439	Eunice	Myers
-32440	Robert	Huskey
-</pre></code>
+32440	Robert	Huskey</pre></code>
