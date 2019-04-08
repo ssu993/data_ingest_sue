@@ -2,7 +2,7 @@
 Finally save in /loudacre/accounts/CA only clients whose state is from California. Save the file in avro format and compressed using snappy. From the terminal, display some of the records
 that you just imported. Take a screenshot and save it as CA_only.
 
-## State 칼럼의 Value 형식 확인
+## 1. State 칼럼의 Value 형식 확인
 - Command
 <pre><code>sqoop eval \
 --connect jdbc:mysql://localhost/loudacre \
@@ -22,7 +22,7 @@ that you just imported. Take a screenshot and save it as CA_only.
 | AZ                   | 
 ------------------------</pre></code>
 
-## Import Data to HDFS
+## 2. Import Data to HDFS
 - Command
 <pre><code>sqoop import \
 --connect jdbc:mysql://localhost/loudacre \
@@ -112,7 +112,7 @@ Note: Recompile with -Xlint:deprecation for details.
 19/04/07 23:13:08 INFO mapreduce.ImportJobBase: Transferred 1.2884 MB in 38.4308 seconds (34.3299 KB/sec)
 19/04/07 23:13:08 INFO mapreduce.ImportJobBase: Retrieved 92416 records.</pre></code>
 
-## Check Data in HDFS.
+## 3. Check Data in HDFS
 - HDFS에 생성된 CA 폴더 리스트 확인 
 <pre><code>[training@localhost ~]$ hdfs dfs -ls /loudacre/accounts/CA
 Found 5 items
