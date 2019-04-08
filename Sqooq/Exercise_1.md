@@ -4,14 +4,15 @@ Hint: You will have to figure out what the name of the table columns are in orde
 
 ## Figure out the columns of table.
 - Command
-///
+<pre><code>
 sqoop eval \
 --connect jdbc:mysql://localhost/loudacre \
 --username training --password training \
 --query "desc accounts"
-///
+</code></pre>
+
 - Result
-///
+<pre><code>
 ---------------------------------------------------------------------------------------------------------
 | Field                | Type                 | Null | Key | Default              | Extra                |
 ---------------------------------------------------------------------------------------------------------
@@ -28,11 +29,11 @@ sqoop eval \
 | created              | datetime             | NO  |     | (null)               |                      |
 | modified             | datetime             | NO  |     | (null)               |                      |
 ---------------------------------------------------------------------------------------------------------
-///
+</code></pre>
 
 ## Import Data to HDFS
 - Command
-///
+<pre><code>
 sqoop import \
 --connect jdbc:mysql://localhost/loudacre \
 --username training --password training \
@@ -40,9 +41,9 @@ sqoop import \
 --target-dir /loudacre/accounts/user_info \
 --columns "acct_num,first_name,last_name" \
 --fields-terminated-by "\t"
-///
+</pre></code>
 
-///
+<pre><code>
 19/04/07 22:12:59 INFO sqoop.Sqoop: Running Sqoop version: 1.4.6-cdh5.7.0
 19/04/07 22:12:59 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
 19/04/07 22:12:59 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.
@@ -115,11 +116,11 @@ Note: Recompile with -Xlint:deprecation for details.
 		Bytes Written=2615920
 19/04/07 22:13:40 INFO mapreduce.ImportJobBase: Transferred 2.4947 MB in 36.8321 seconds (69.3583 KB/sec)
 19/04/07 22:13:40 INFO mapreduce.ImportJobBase: Retrieved 129761 records.
-///
+</pre></code>
 
 ## Check user_info Data.
 - HDFS에 생성된 user_info 폴더 리스트 확인 
-///
+<pre><code>
 [training@localhost ~]$ hdfs dfs -ls /loudacre/accounts/user_info
 Found 5 items
 -rw-rw-rw-   1 training supergroup          0 2019-04-07 22:13 /loudacre/accounts/user_info/_SUCCESS
@@ -127,10 +128,10 @@ Found 5 items
 -rw-rw-rw-   1 training supergroup     649567 2019-04-07 22:13 /loudacre/accounts/user_info/part-m-00001
 -rw-rw-rw-   1 training supergroup     649000 2019-04-07 22:13 /loudacre/accounts/user_info/part-m-00002
 -rw-rw-rw-   1 training supergroup     679263 2019-04-07 22:13 /loudacre/accounts/user_info/part-m-00003
-///
+</pre></code>
 
 - 데이터 확인
-///
+<pre><code>
 [training@localhost ~]$ hdfs dfs -tail /loudacre/accounts/user_info/part-m-00000
 lsh
 32390	Olga	Lipson
@@ -184,4 +185,4 @@ lsh
 32438	Violet	Searcy
 32439	Eunice	Myers
 32440	Robert	Huskey
-///
+</pre></code>
