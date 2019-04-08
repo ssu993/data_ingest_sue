@@ -123,6 +123,16 @@ Found 5 items
 -rw-rw-rw-   1 training supergroup     322106 2019-04-07 23:13 /loudacre/accounts/CA/part-m-00003.avro</pre></code>
 
 - 데이터 확인
-<pre><code>
+<pre><code>[training@localhost ~]$ avro-tools tojson hdfs://localhost/loudacre/accounts/CA/part-m-00000.avro | taillog4j:WARN No appenders could be found for logger (org.apache.hadoop.metrics2.lib.MutableMetricsFactory).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+{"acct_num":{"int":32426},"first_name":{"string":"Dorothy"},"last_name":{"string":"Thompson"}}
+{"acct_num":{"int":32428},"first_name":{"string":"Philip"},"last_name":{"string":"Gamble"}}
+{"acct_num":{"int":32429},"first_name":{"string":"Marvin"},"last_name":{"string":"Potts"}}
+{"acct_num":{"int":32431},"first_name":{"string":"Judith"},"last_name":{"string":"Lindgren"}}
+{"acct_num":{"int":32432},"first_name":{"string":"Darlene"},"last_name":{"string":"Gonzales"}}
+{"acct_num":{"int":32435},"first_name":{"string":"Marjorie"},"last_name":{"string":"Morrison"}}
+{"acct_num":{"int":32436},"first_name":{"string":"Helen"},"last_name":{"string":"Perez"}}
+{"acct_num":{"int":32438},"first_name":{"string":"Violet"},"last_name":{"string":"Searcy"}}</pre></code>
 
-</pre></code>
+## 
