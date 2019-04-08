@@ -5,16 +5,13 @@ Hint: You will have to figure out what the name of the table columns are in orde
 ## Figure out the columns of table.
 - Command
 ///
-[training@localhost ~]$ sqoop eval \
-> --connect jdbc:mysql://localhost/loudacre \
-> --username training --password training \
-> --query "desc accounts"
+sqoop eval \
+--connect jdbc:mysql://localhost/loudacre \
+--username training --password training \
+--query "desc accounts"
 ///
 - Result
 ///
-19/04/07 22:11:33 INFO sqoop.Sqoop: Running Sqoop version: 1.4.6-cdh5.7.0
-19/04/07 22:11:33 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
-19/04/07 22:11:33 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.
 ---------------------------------------------------------------------------------------------------------
 | Field                | Type                 | Null | Key | Default              | Extra                |
 ---------------------------------------------------------------------------------------------------------
@@ -36,13 +33,13 @@ Hint: You will have to figure out what the name of the table columns are in orde
 ## Import Data to HDFS
 - Command
 ///
-[training@localhost ~]$ sqoop import \
-> --connect jdbc:mysql://localhost/loudacre \
-> --username training --password training \
-> --table accounts \
-> --target-dir /loudacre/accounts/user_info \
-> --columns "acct_num,first_name,last_name" \
-> --fields-terminated-by "\t"
+sqoop import \
+--connect jdbc:mysql://localhost/loudacre \
+--username training --password training \
+--table accounts \
+--target-dir /loudacre/accounts/user_info \
+--columns "acct_num,first_name,last_name" \
+--fields-terminated-by "\t"
 ///
 
 ///
@@ -131,6 +128,7 @@ Found 5 items
 -rw-rw-rw-   1 training supergroup     649000 2019-04-07 22:13 /loudacre/accounts/user_info/part-m-00002
 -rw-rw-rw-   1 training supergroup     679263 2019-04-07 22:13 /loudacre/accounts/user_info/part-m-00003
 ///
+
 - 데이터 확인
 ///
 [training@localhost ~]$ hdfs dfs -tail /loudacre/accounts/user_info/part-m-00000
