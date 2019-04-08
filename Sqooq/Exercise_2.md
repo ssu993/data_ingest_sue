@@ -124,3 +124,5 @@ last_name = Spencer
 acct_num = 5
 first_name = Anita
 last_name = Laughlin</pre></code>
+
+![screenshot_20171221-151714](https://github.com/ssu993/data_ingest_sue/blob/master/Sqooq/Exercise2.PNG?raw=true)
