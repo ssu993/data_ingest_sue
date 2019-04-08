@@ -123,7 +123,8 @@ Found 5 items
 -rw-rw-rw-   1 training supergroup     322106 2019-04-07 23:13 /loudacre/accounts/CA/part-m-00003.avro</pre></code>
 
 - 데이터 확인
-<pre><code>[training@localhost ~]$ avro-tools tojson hdfs://localhost/loudacre/accounts/CA/part-m-00000.avro | taillog4j:WARN No appenders could be found for logger (org.apache.hadoop.metrics2.lib.MutableMetricsFactory).
+<pre><code>[training@localhost ~]$ avro-tools tojson hdfs://localhost/loudacre/accounts/CA/part-m-00000.avro | tail
+log4j:WARN No appenders could be found for logger (org.apache.hadoop.metrics2.lib.MutableMetricsFactory).
 log4j:WARN Please initialize the log4j system properly.
 log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
 {"acct_num":{"int":32426},"first_name":{"string":"Dorothy"},"last_name":{"string":"Thompson"}}
