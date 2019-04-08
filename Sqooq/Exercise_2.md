@@ -1,8 +1,8 @@
 # Exercise 2
-2. This time save the same in parquet format with snappy compression. Save it in /loudacre/accounts/user_compressed. 
+This time save the same in parquet format with snappy compression. Save it in /loudacre/accounts/user_compressed. 
 Provide.a screenshot of HUE with the new directory created.
 
-## Import Data to HDFS
+## 1. Import Data to HDFS
 - Command
 <pre><code>
 sqoop import \
@@ -95,7 +95,7 @@ Note: Recompile with -Xlint:deprecation for details.
 19/04/07 22:43:32 INFO mapreduce.ImportJobBase: Retrieved 129761 records.
 </pre></code>
 
-## Check Data in HDFS.
+## 2. Check Data in HDFS
 - HDFS에 생성된 user_compressed 폴더 리스트 확인 
 <pre><code>
 [training@localhost ~]$ hdfs dfs -ls /loudacre/accounts/user_compressed
