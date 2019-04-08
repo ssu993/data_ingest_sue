@@ -4,8 +4,7 @@ Provide.a screenshot of HUE with the new directory created.
 
 ## 1. Import Data to HDFS
 - Command
-<pre><code>
-sqoop import \
+<pre><code>sqoop import \
 --connect jdbc:mysql://localhost/loudacre \
 --username training --password training \
 --table accounts \
@@ -14,11 +13,9 @@ sqoop import \
 --fields-terminated-by "\t" \
 --compression-codec \
 org.apache.hadoop.io.compress.SnappyCodec \
---as-parquetfile
-</pre></code>
+--as-parquetfile</pre></code>
 
-<pre><code>
-19/04/07 22:42:44 INFO sqoop.Sqoop: Running Sqoop version: 1.4.6-cdh5.7.0
+<pre><code>19/04/07 22:42:44 INFO sqoop.Sqoop: Running Sqoop version: 1.4.6-cdh5.7.0
 19/04/07 22:42:44 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
 19/04/07 22:42:44 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.
 19/04/07 22:42:44 INFO tool.CodeGenTool: Beginning code generation
@@ -92,25 +89,21 @@ Note: Recompile with -Xlint:deprecation for details.
 	File Output Format Counters 
 		Bytes Written=0
 19/04/07 22:43:32 INFO mapreduce.ImportJobBase: Transferred 1.2446 MB in 42.9149 seconds (29.6974 KB/sec)
-19/04/07 22:43:32 INFO mapreduce.ImportJobBase: Retrieved 129761 records.
-</pre></code>
+19/04/07 22:43:32 INFO mapreduce.ImportJobBase: Retrieved 129761 records.</pre></code>
 
 ## 2. Check Data in HDFS
 - HDFS에 생성된 user_compressed 폴더 리스트 확인 
-<pre><code>
-[training@localhost ~]$ hdfs dfs -ls /loudacre/accounts/user_compressed
+<pre><code>[training@localhost ~]$ hdfs dfs -ls /loudacre/accounts/user_compressed
 Found 6 items
 drwxrwxrwx   - training supergroup          0 2019-04-07 22:42 /loudacre/accounts/user_compressed/.metadata
 drwxrwxrwx   - training supergroup          0 2019-04-07 22:43 /loudacre/accounts/user_compressed/.signals
 -rw-rw-rw-   1 training supergroup     324989 2019-04-07 22:43 /loudacre/accounts/user_compressed/280e8c03-f46d-4361-b4bb-8773ab47c5ce.parquet
 -rw-rw-rw-   1 training supergroup     324753 2019-04-07 22:43 /loudacre/accounts/user_compressed/4bfa7272-ad6f-4011-a1d5-47e7936ddfb5.parquet
 -rw-rw-rw-   1 training supergroup     325200 2019-04-07 22:43 /loudacre/accounts/user_compressed/ce3f2a38-9f70-4aee-be43-11411834d5e8.parquet
--rw-rw-rw-   1 training supergroup     324481 2019-04-07 22:43 /loudacre/accounts/user_compressed/e2a193b3-c760-45c7-835a-01adea536011.parquet
-</pre></code>
+-rw-rw-rw-   1 training supergroup     324481 2019-04-07 22:43 /loudacre/accounts/user_compressed/e2a193b3-c760-45c7-835a-01adea536011.parquet</pre></code>
 
 - 데이터 확인
-<pre><code>
-[training@localhost ~]$ parquet-tools head \
+<pre><code>[training@localhost ~]$ parquet-tools head \
 > hdfs://localhost/loudacre/accounts/user_compressed/
 acct_num = 1
 first_name = Donald
@@ -130,5 +123,4 @@ last_name = Spencer
 
 acct_num = 5
 first_name = Anita
-last_name = Laughlin
-</pre></code>
+last_name = Laughlin</pre></code>
