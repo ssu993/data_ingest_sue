@@ -42,3 +42,6 @@ agent1.channels.memory-channel.transactionCapacity = 1000</pre></code>
 - weblogs copy 하여 결과 확인
 <pre><code>$DEVSH/flume/copy-move-weblogs.sh \
 /flume/weblogs_spooldir</pre></code>
+
+![screenshot_20171221-151714](https://github.com/ssu993/data_ingest_sue/blob/master/Flafka/flafka_result.PNG?raw=true)
+
