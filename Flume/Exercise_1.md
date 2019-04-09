@@ -2,15 +2,15 @@
 
 ## 1. Create a new flume configuration file with the following
 - Source
-Type  | Netcat
-Bind  | localhost
-Port  | 44444
-Channel
-- Type : Memory
-- Capacity : 1000
-- transactionCapacity : 100
-Sink
-- Type : logger
+Type : Netcat
+Bind : localhost
+Port : 44444
+- Channel
+Type : Memory
+Capacity : 1000
+transactionCapacity : 100
+- Sink
+Type : logger
 
 - Flume Configuration File
 <pre><code>[training@localhost ~]$ cat $DEVSH/exercises/flume/netcat.conf# netcat.conf
