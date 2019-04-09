@@ -20,7 +20,7 @@ weblogs</pre></code>
 Topic:weblogs	PartitionCount:1	ReplicationFactor:1	Configs:
 	Topic: weblogs	Partition: 0	Leader: 0	Replicas: 0	Isr: 0</pre></code>
 
-![screenshot_20171221-151714](https://github.com/ssu993/data_ingest_sue/blob/master/Flume/flume_result.PNG?raw=true)
+![screenshot_20171221-151714](https://github.com/ssu993/data_ingest_sue/blob/master/Kafka/kafka1.PNG?raw=true)
 
 ## 2. Producing and Consuming Messages
 - Kafka producer 시작
@@ -39,4 +39,4 @@ Topic:weblogs	PartitionCount:1	ReplicationFactor:1	Configs:
 test weblog entry 1
 </pre></code>
 
-![screenshot_20171221-151714](https://github.com/ssu993/data_ingest_sue/blob/master/Flume/flume_result.PNG?raw=true)
+![screenshot_20171221-151714](https://github.com/ssu993/data_ingest_sue/blob/master/Kafka/kafka2.PNG?raw=true)
