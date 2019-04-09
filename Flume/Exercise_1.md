@@ -1,10 +1,10 @@
 # Exercise 1
 
 ## 1. Create a new flume configuration file with the following
-Source
-- Type : Netcat
-- Bind : localhost
-- Port : 44444
+- Source
+Type  | Netcat
+Bind  | localhost
+Port  | 44444
 Channel
 - Type : Memory
 - Capacity : 1000
@@ -52,4 +52,4 @@ agent1.channels.MemChannel.transactionCapacity = 100
 From another terminal start telnet and connect to port 4444. Start typing and you should see the
 results from the other terminal. Provide a screenshot of your results.
 
-![screenshot_20171221-151714](https://github.com/ssu993/data_ingest_sue/blob/master/Sqooq/Exercise1.PNG?raw=true)
+![screenshot_20171221-151714](https://github.com/ssu993/data_ingest_sue/blob/master/Flume/flume_result.PNG?raw=true)
