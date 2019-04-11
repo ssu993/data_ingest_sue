@@ -17,4 +17,11 @@ order by total_sell desc limit 3;
 3 rows selected (64.115 seconds)
 </pre></code>
 
-## 2. 
+## 2.
+<pre><code>select order_id, sum(p.price) as total_amount
+from order_details o join products p on p.prod_id=o.prod_id
+group by o.order_id
+order by total_amount desc limit 10;</pre></code>
+
+<pre><code>
+</pre></code>
