@@ -6,6 +6,7 @@ from products p join order_details o on p.prod_id=o.prod_id
 group by p.prod_id, p.brand, p.name
 order by total_sell desc limit 3;
 </pre></code>
+
 <pre><code>+----------+-------------+--------------------------------------------------------------------+-------------+--+
 | prod_id  |    brand    |                                name                                | total_sell  |
 +----------+-------------+--------------------------------------------------------------------+-------------+--+
@@ -15,3 +16,5 @@ order by total_sell desc limit 3;
 +----------+-------------+--------------------------------------------------------------------+-------------+--+
 3 rows selected (64.115 seconds)
 </pre></code>
+
+## 2. 
