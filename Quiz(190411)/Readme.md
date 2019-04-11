@@ -23,5 +23,19 @@ from order_details o join products p on p.prod_id=o.prod_id
 group by o.order_id
 order by total_amount desc limit 10;</pre></code>
 
-<pre><code>
+<pre><code>+-----------+---------------+--+
+| order_id  | total_amount  |
++-----------+---------------+--+
+| 5605465   | 940577        |
+| 5997571   | 702157        |
+| 5551963   | 699348        |
+| 5944419   | 627266        |
+| 5401363   | 624428        |
+| 6156005   | 554497        |
+| 6293815   | 554467        |
+| 5081729   | 551978        |
+| 5111703   | 551007        |
+| 5353895   | 549988        |
++-----------+---------------+--+
+10 rows selected (85.884 seconds)
 </pre></code>
