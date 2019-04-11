@@ -39,3 +39,5 @@ order by total_amount desc limit 10;</pre></code>
 +-----------+---------------+--+
 10 rows selected (85.884 seconds)
 </pre></code>
+
+##3. 
